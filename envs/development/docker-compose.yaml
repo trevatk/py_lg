@@ -1,0 +1,17 @@
+---
+version: '3.7'
+
+services:
+  py_lg:
+    image: trevatk/py_lg:latest
+    container_name: py_lg
+    restart: 'no'
+    env_file:
+      - ./environment/server.env
+    ports:
+      - 9091:9091
+    
+networks:
+  default:
+    name: lg-network
+    external: true
